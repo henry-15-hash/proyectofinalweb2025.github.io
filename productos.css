@@ -1,0 +1,381 @@
+/* ---------------- PALETA ---------------- */
+:root {
+    --bg-dark: #050505;
+    --card-dark: #050505;
+    --neon-green: #00ff48;
+    --green-border: rgba(0, 255, 127, 0.7);
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+    --accent: #00ff7f;
+    --gap: 1.5rem;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo general */
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-main);
+    background: url("paisaje.jpeg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ---------------- NAV PEQUEÑA SUPERIOR IZQUIERDA ---------------- */
+
+.main-nav {
+    position: absolute;   /* <--- CAMBIO: antes era fixed */
+    top: 8px;
+    left: 20px;
+    z-index: 1000;
+    background: #38a64a;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.main-nav a {
+    font-size: 11px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.main-nav a.active {
+    text-decoration: underline;
+}
+
+/* -------- LOGO SUPERIOR DERECHA (NO ROMPE EL GRID) -------- */
+.logo-top-right {
+    position: fixed;
+    top: 8px;
+    right: 20px;
+    height: 55px;          /* ajusta el tamaño del logo aquí */
+    z-index: 1100;
+}
+
+/* ---------------- CONTENIDO PRINCIPAL ---------------- */
+
+.page {
+    max-width: 1300px;
+    margin: 90px auto 40px; /* espacio para la nav fija */
+    padding: 0 1.5rem 3rem;
+}
+
+/* Barra filtros + buscador */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    gap: 1rem;
+}
+
+/* Botones de filtro */
+.filters {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border-radius: 999px;
+    border: 1px solid var(--green-border);
+    padding: .45rem 1.2rem;
+    background: rgba(0,0,0,0.85);
+    color: var(--accent);
+    font-size: .8rem;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(0, 255, 127, 0.18);
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(0,255,127,.6);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #111;
+    box-shadow: 0 0 14px rgba(0,255,127,.75);
+}
+
+/* Buscador */
+.search {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search input {
+    width: 100%;
+    max-width: 520px;
+    padding: .55rem 2.3rem .55rem .9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.6);
+    background: rgba(0,0,0,0.75);
+    color: var(--text-main);
+    font-size: .85rem;
+}
+
+.search input::placeholder {
+    color: #777;
+}
+
+.search-icon {
+    position: absolute;
+    right: .9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .8;
+    font-size: .9rem;
+}
+
+/* ---------------- GRID DE TARJETAS ---------------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;  /* asegura que todas las cards llenen la fila */
+}
+
+/* Responsivo simple */
+@media (max-width: 1100px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------- TARJETAS ---------------- */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--green-border);
+    box-shadow:
+        0 0 25px rgba(0,255,127,.4),
+        0 12px 35px rgba(0,0,0,.75);
+}
+
+/* ZONA DE IMAGEN FIJA PARA QUE TODO QUEDE ENCAJADO */
+.card-header {
+    background: #030303;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;          /* altura fija para TODAS las tarjetas */
+}
+
+.card-header img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Texto */
+.card-body {
+    padding: .9rem 1.4rem 1.1rem;
+}
+
+.brand {
+    font-size: .72rem;
+    color: var(--text-muted);
+    margin-bottom: .25rem;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+}
+
+.seller {
+    font-size: .72rem;
+    color: var(--text-muted);
+    margin-bottom: .5rem;
+}
+
+/* Precios */
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    font-size: .8rem;
+    margin-bottom: .2rem;
+}
+
+.price-box .old {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.price-box .discount {
+    color: #ff4b4b;
+    font-weight: 700;
+}
+
+.price-now {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.price-now .unit {
+    font-size: .8rem;
+    color: var(--text-muted);
+    margin-left: .15rem;
+}
+
+/* Botón COMPRAR grande y verde */
+.cta {
+    margin: .3rem 1.4rem 1.2rem;
+    padding: .55rem 1rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--neon-green);
+    color: #111;
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    box-shadow:
+        0 0 20px rgba(0,255,72,.7),
+        0 10px 20px rgba(0,0,0,.7);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 25px rgba(0,255,72,.9),
+        0 15px 25px rgba(0,0,0,.8);
+    filter: brightness(1.05);
+}
+
+
+
+/* ===== LOGO ARRIBA A LA DERECHA ===== */
+/* LOGO FIJO ARRIBA A LA DERECHA — SIN SER TAPADO por el menú */
+.header-top {
+    position: fixed;
+    top: 0px;         /* ⬅️ Lo baja por debajo del menú verde */
+    right: 25px;
+    z-index: 3000;     /* ⬅️ Por encima del menú */
+}
+
+.logo-empresa {
+    width: 140px;
+    height: auto;
+}
+
+
+
+
+
+
+
+/* ===== CORRECCIÓN PARA QUE EL MENÚ VERDE (NAV) QUEDE IGUAL QUE EN PRODUCTOS ===== */
+.main-nav {
+    position: fixed;      /* <-- Hace que quede siempre arriba */
+    top: 0;
+    left: 0;
+    width: 100%;          /* <-- Esto hace que ocupe TODA la longitud */
+    display: flex;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.main-nav ul {
+    background: #38a64a;
+    padding: 8px 25px;
+    border-radius: 999px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+.main-nav a {
+    font-size: 14px;
+    font-weight: 20;
+     color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === MODO CELULAR: el menú ya no queda fijo, baja junto con todo === */
+@media (max-width: 768px) {
+
+  /* El menú de opciones (INICIO, PRODUCTOS, etc.) */
+  .main-nav {
+    position: absolute;   /* antes estaba fixed */
+    top: 10px;
+    left: 15px;
+    z-index: 5;
+  }
+
+  /* El logo de la esquina derecha */
+  .logo-top-right {
+    position: absolute;   /* también se mueve con el scroll */
+    top: 10px;
+    right: 15px;
+  }
+
+  /* Un poco de espacio para que el contenido no choque con el menú */
+  .page {
+    margin-top: 90px;
+  }
+}
+

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagos - La Buena Tierra</title>
+  <link rel="stylesheet" href="pagos.css">
+</head>
+<body>
+
+
+  <!-- Menú verde (INICIO, PRODUCTOS, CONSULTAS, etc.) -->
+  <header class="main-nav">
+      <nav>
+          <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="consultas.html">Consultas</a></li>
+              <li><a href="pagos.html" class="active">Pagos</a></li>
+              <li><a href="blog.html">Blog</a></li>
+          </ul>
+      </nav>
+  </header>
+
+
+
+
+  <!-- LOGO ARRIBA A LA DERECHA -->
+  <header class="header-top">
+    <img src="la buena tierra logo.jpg" alt="Logo de empresa" class="logo-empresa">
+  </header>
+
+  <!-- CONTENIDO CENTRAL -->
+  <div class="page">
+    <div id="pay-card">
+
+      <h1 class="pay-title">Sección de pagos</h1>
+      <p class="pay-subtitle">Realice su pago seguro a La Buena Tierra mediante nuestros canales.</p>
+
+      <div class="pay-container">
+
+        <!-- FORMULARIO DE DATOS DEL CLIENTE -->
+        <div class="form-group">
+  <label>Nombre y apellidos </label>
+  <input id="nombre" type="text" placeholder="Ingrese su Nombre y Apellido">
+  <small class="error-msg" id="error-nombre"></small>
+</div>
+
+<div class="form-group">
+  <label>DNI / RUC</label>
+  <input id="dniRuc" type="text" placeholder="Ingrese su DNI o RUC">
+  <small class="error-msg" id="error-dniRuc"></small>
+</div>
+
+<div class="form-group">
+  <label>Teléfono</label>
+  <input id="telefono" type="tel" placeholder="Número de contacto">
+  <small class="error-msg" id="error-telefono"></small>
+</div>
+
+<div class="form-group">
+  <label>Concepto de pago</label>
+  <input id="concepto" type="text" placeholder="Ej: Compra de fertilizantes">
+  <small class="error-msg" id="error-concepto"></small>
+</div>
+
+<div class="form-group">
+  <label>Monto (S/)</label>
+  <input id="monto" type="number" step="0.01" placeholder="0.00">
+  <small class="error-msg" id="error-monto"></small>
+</div>
+
+<button class="btn-pagar" id="btnConfirmar">Confirmar datos</button>
+<p class="nota-form">
+  Una vez confirmados los datos, seleccione el medio de pago y realice la operación.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- BLOQUE DE MÉTODOS DE PAGO -->
+        <div class="pay-methods">
+          <h2>Medios de pago</h2>
+          <p>Seleccione una opción y siga las instrucciones.</p>
+
+          <!-- LISTA DE MÉTODOS -->
+          <div class="methods-list">
+            <button class="method-btn active" data-method="yape">Yape</button>
+            <button class="method-btn" data-method="plin">Plin</button>
+            <button class="method-btn" data-method="bcp">BCP</button>
+            <button class="method-btn" data-method="scotiabank">Scotiabank</button>
+          </div>
+
+          <!-- CONTENIDOS POR MÉTODO -->
+          <div class="methods-content">
+
+            <!-- YAPE -->
+            <div class="pay-method-content active" id="method-yape">
+              <h3>Pagar con Yape</h3>
+              <p>Escanee el código QR con su app de Yape y complete el pago.</p>
+
+              <div class="yape-qr-wrapper">
+                <!-- Reemplaza por tu QR real -->
+                <img src="yape qr.jpeg" alt="QR de Yape" class="yape-qr">
+              </div>
+
+              <p class="yape-number">
+                Número Yape de la empresa:<br>
+                <span>959581396</span>
+              </p>
+
+              <p class="yape-help">
+                Verifique que el nombre del destinatario sea
+                <strong>Corporación Agrícola La Buena Tierra</strong>
+                antes de confirmar el pago.
+              </p>
+            </div>
+
+            <!-- PLIN -->
+            <div class="pay-method-content" id="method-plin">
+              <h3>Pagar con Plin</h3>
+              <p>Realice el pago a través de Plin usando el siguiente número o QR.</p>
+
+              <div class="yape-qr-wrapper">
+                <!-- Reemplaza por tu QR de Plin -->
+                <img src="plin qr.png" alt="QR de Plin" class="yape-qr">
+              </div>
+
+              <p class="yape-number">
+                Número Plin de la empresa:<br>
+                <span>9YY YYY YYY</span>
+              </p>
+
+              <p class="yape-help">
+                Asegúrese de que el titular aparezca como
+                <strong>Corporación Agrícola La Buena Tierra</strong>
+                antes de confirmar el pago.
+              </p>
+            </div>
+
+            <!-- BCP -->
+            <div class="pay-method-content" id="method-bcp">
+              <h3>Depósito / Transferencia BCP</h3>
+              <p>Puede realizar una transferencia o depósito a la siguiente cuenta:</p>
+
+              <ul class="bank-data">
+                <li><strong>Banco:</strong> BCP</li>
+                <li><strong>Tipo de cuenta:</strong> Cuenta corriente en soles</li>
+                <li><strong>N° de cuenta:</strong> 000-00000000-0-00</li>
+                <li><strong>CCI:</strong> 002-000000000000000-00</li>
+                <li><strong>Titular:</strong> Corporación Agrícola La Buena Tierra</li>
+              </ul>
+
+              <p class="yape-help">
+                Envíe el comprobante de pago al número o correo asignado por la empresa
+                para validar la operación.
+              </p>
+            </div>
+
+            <!-- SCOTIABANK -->
+            <div class="pay-method-content" id="method-scotiabank">
+              <h3>Depósito / Transferencia Scotiabank</h3>
+              <p>También puede realizar su pago mediante Scotiabank:</p>
+
+              <ul class="bank-data">
+                <li><strong>Banco:</strong> Scotiabank</li>
+                <li><strong>Tipo de cuenta:</strong> Cuenta corriente en soles</li>
+                <li><strong>N° de cuenta:</strong> 000-0000000</li>
+                <li><strong>CCI:</strong> 009-000000000000000-00</li>
+                <li><strong>Titular:</strong> Corporación Agrícola La Buena Tierra</li>
+              </ul>
+
+              <p class="yape-help">
+                Adjunte el voucher de pago según indique el área de cobranzas de la empresa.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // ---------- VALIDACIÓN DEL FORMULARIO DE PAGO ----------
+  const inputNombre = document.getElementById('nombre');
+  const inputDniRuc = document.getElementById('dniRuc');
+  const inputTelefono = document.getElementById('telefono');
+  const inputConcepto = document.getElementById('concepto');
+  const inputMonto = document.getElementById('monto');
+  const btnConfirmar = document.getElementById('btnConfirmar');
+
+  function limpiarErrores() {
+    document.getElementById('error-nombre').textContent = '';
+    document.getElementById('error-dniRuc').textContent = '';
+    document.getElementById('error-telefono').textContent = '';
+    document.getElementById('error-concepto').textContent = '';
+    document.getElementById('error-monto').textContent = '';
+  }
+
+  function validarFormulario(e) {
+    e.preventDefault();
+    limpiarErrores();
+    let esValido = true;
+
+    // NOMBRE: solo letras y espacios, mínimo 2 palabras
+    const nombreVal = inputNombre.value.trim();
+    const soloLetras = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$/;
+
+    if (
+      nombreVal.length < 5 ||
+      !soloLetras.test(nombreVal) ||
+      nombreVal.split(/\s+/).length < 2
+    ) {
+      document.getElementById('error-nombre').textContent =
+        'Coloque bien su nombre y apellido completo.';
+      esValido = false;
+    }
+
+    // DNI / RUC: solo números, DNI = 9 dígitos o RUC = 11 dígitos
+    const docVal = inputDniRuc.value.trim();
+    const soloNumeros = /^\d+$/;
+
+    if (
+      !soloNumeros.test(docVal) ||
+      !(docVal.length === 8 || docVal.length === 11)
+    ) {
+      document.getElementById('error-dniRuc').textContent =
+        'Ingrese DNI de 9 dígitos o RUC de 11 dígitos.';
+      esValido = false;
+    }
+
+    // TELÉFONO: exactamente 9 dígitos
+    const telVal = inputTelefono.value.trim();
+    if (!/^\d{9}$/.test(telVal)) {
+      document.getElementById('error-telefono').textContent =
+        'Opción no válida. Ingrese un teléfono de 9 dígitos.';
+      esValido = false;
+    }
+
+    // CONCEPTO: solo letras y espacios, sin números
+    const conceptoVal = inputConcepto.value.trim();
+    if (
+      conceptoVal.length < 3 ||
+      !soloLetras.test(conceptoVal)
+    ) {
+      document.getElementById('error-concepto').textContent =
+        'Ingrese un concepto de pago válido (solo letras).';
+      esValido = false;
+    }
+
+    // MONTO: obligatorio, solo número > 0
+    const montoVal = inputMonto.value.trim();
+    if (
+      montoVal === '' ||
+      isNaN(montoVal) ||
+      Number(montoVal) <= 0
+    ) {
+      document.getElementById('error-monto').textContent =
+        'Ingrese un monto válido en soles (solo números).';
+      esValido = false;
+    }
+
+    // Si todo está ok:
+    if (esValido) {
+      alert(
+        'Datos confirmados. Ahora elija un medio de pago (Yape, Plin, BCP o Scotiabank).'
+      );
+
+      // Desplazar suavemente hacia la sección de métodos de pago
+      const bloqueMetodos = document.querySelector('.pay-methods');
+      if (bloqueMetodos) {
+        bloqueMetodos.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  btnConfirmar.addEventListener('click', validarFormulario);
+
+  // ---------- SCRIPT ORIGINAL PARA CAMBIAR ENTRE MÉTODOS ----------
+  const buttons = document.querySelectorAll('.method-btn');
+  const contents = document.querySelectorAll('.pay-method-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const method = btn.getAttribute('data-method');
+
+      // activar botón
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // mostrar contenido correspondiente
+      contents.forEach(c => {
+        if (c.id === 'method-' + method) {
+          c.classList.add('active');
+        } else {
+          c.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

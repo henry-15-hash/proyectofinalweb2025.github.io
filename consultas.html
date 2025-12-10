@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de reclamo - La buena Tierra</title>
+  <link rel="stylesheet" href="consultas.css">
+</head>
+<body>
+  <header class="header-top">
+    <img src="la buena tierra logo.jpg" class="logo-empresa">
+</header>
+
+
+<header class="main-nav"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+ 
+
+  <!-- FORMULARIO CENTRADO -->
+  <div class="page">
+    <div id="form">
+      <div id="form-body">
+        <div id="welcome-lines">
+          <div id="welcome-line-1">La buena</div>
+          <div id="welcome-line-1">Tierra</div>
+          <div id="welcome-line-2">Llene este formulario de reclamo</div>
+        </div>
+
+        <div id="input-area">
+
+  <!-- NOMBRE -->
+  <div class="form-inp">
+    <input id="nombre" type="text" placeholder="Nombre completo">
+  </div>
+  <div class="error-msg" id="error-nombre"></div>
+
+  <!-- APELLIDOS -->
+  <div class="form-inp">
+    <input id="apellidos" type="text" placeholder="Apellidos">
+  </div>
+  <div class="error-msg" id="error-apellidos"></div>
+
+  <!-- TELÉFONO -->
+  <div class="form-inp">
+    <input id="telefono" type="tel" placeholder="Teléfono">
+  </div>
+  <div class="error-msg" id="error-telefono"></div>
+
+  <!-- ASUNTO -->
+  <div class="form-inp">
+    <textarea id="asunto" placeholder="Asunto o queja" rows="4"></textarea>
+  </div>
+
+</div>
+
+
+        <div id="submit-button-cvr">
+          <button id="submit-button">Enviar reclamo</button>
+        </div>
+
+        <div id="forgot-pass">
+          <span>Nos comunicaremos con usted a la brevedad.</span>
+        </div>
+        <div id="mensaje-exito">✔ Reclamo enviado correctamente</div>
+
+
+        <div id="bar"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<script>
+const inputNombre    = document.getElementById("nombre");
+const inputApellidos = document.getElementById("apellidos");
+const inputTelefono  = document.getElementById("telefono");
+
+const errorNombre    = document.getElementById("error-nombre");
+const errorApellidos = document.getElementById("error-apellidos");
+const errorTelefono  = document.getElementById("error-telefono");
+const mensajeExito   = document.getElementById("mensaje-exito");
+
+// Solo letras y espacios
+function esNombreValido(texto) {
+  return /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/.test(texto.trim());
+}
+
+// 🔹 Teléfono: obligatoriamente 9 dígitos
+function esTelefonoValido(texto) {
+  return /^\d{9}$/.test(texto.trim());
+}
+
+document.getElementById("submit-button").onclick = function(e) {
+  e.preventDefault();
+
+  // Limpiar mensajes
+  errorNombre.textContent    = "";
+  errorApellidos.textContent = "";
+  errorTelefono.textContent  = "";
+  mensajeExito.style.display = "none";
+
+  let valido = true;
+
+  if (!esNombreValido(inputNombre.value)) {
+    errorNombre.textContent =
+      "Opción no válida, coloque bien su nombre completo.";
+    valido = false;
+  }
+
+  if (!esNombreValido(inputApellidos.value)) {
+    errorApellidos.textContent =
+      "Opción no válida, coloque bien sus apellidos.";
+    valido = false;
+  }
+
+  // 🔹 Validación de teléfono de 9 dígitos
+  if (!esTelefonoValido(inputTelefono.value)) {
+    errorTelefono.textContent =
+      "Opción no válida, el teléfono debe tener exactamente 9 dígitos.";
+    valido = false;
+  }
+
+  if (valido) {
+    mensajeExito.style.display = "block";
+  }
+};
+</script>
+
+

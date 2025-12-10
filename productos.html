@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - La Buena Tierra</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+
+    <!-- Barra superior pequeña (INICIO, PRODUCTOS, etc.) -->
+     <header class="header-top">
+    <img src="la buena tierra logo.jpg" class="logo-empresa">
+</header>
+
+      
+    <header class="main-nav">
+
+        
+
+
+
+
+
+         
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO DE PRODUCTOS -->
+    <main class="page">
+        
+
+        <!-- Filtros y buscador -->
+        <section class="toolbar">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="pomo">Pomo</button>
+                <button class="filter-btn" data-filter="sobre">Sobre</button>
+                <button class="filter-btn" data-filter="saco">Saco</button>
+            </div>
+
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Buscar producto...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <!-- GRID DE PRODUCTOS -->
+        <section class="grid">
+
+            <!-- POMO -->
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/abamex pomo.png" alt="Plaguicida Abamex 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">FARMEX</p>
+                    <h3 class="name">ABAMEX</h3>
+                    <p class="seller"> insecticida y acaricida agrícola a base de abamectina</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 37.80</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/vital w pomo.jpg" alt="Insecticida Beta-Baytroid 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">BAYER</p>
+                    <h3 class="name">VITAL W</h3>
+                    <p class="seller">potente nutriente foliar agrícola 
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-8%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 38.50</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/urea.png" alt="Nitrato de Amonio 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Nitrato de Amonio 50 kg</h3>
+                    <p class="seller">Compuesto orgánico que resulta del metabolismo</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 120.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 108.00</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/nitrato de calcio.png" alt="Urea Granulada 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Urea Granulada 50 kg</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 145.00</span>
+                        <span class="discount">-7%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 106.95</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/bravo pomo.jpg" alt="Fertilizante NPK en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fertilizante NPK en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 15.80</span>
+                        <span class="discount">-5%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 14.25</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/ergostim pomo.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/Sulfato.png" alt="Nitrato de Amonio 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Nitrato de Amonio 50 kg</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 120.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 108.00</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/Nitrato.png" alt="Nitrato de Amonio 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Nitrato de Amonio 50 kg</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 120.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 108.00</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/NPK.png" alt="Nitrato de Amonio 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Nitrato de Amonio 50 kg</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 120.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 108.00</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+            <!-- SACO -->
+            <article class="card" data-category="saco">
+                <div class="card-header">
+                    <img src="productos/Ureamax.png" alt="Nitrato de Amonio 50 kg">
+                </div>
+                <div class="card-body">
+                    <p class="brand">MOLINOS &amp; CÍA</p>
+                    <h3 class="name">Nitrato de Amonio 50 kg</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 120.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 108.00</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+
+
+
+            <!-- POMO -->
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/fascinate pomo.png" alt="Plaguicida Abamex 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">FARMEX</p>
+                    <h3 class="name">Plaguicida Abamex® 1L</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 37.80</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+            <!-- POMO -->
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/pyros.png" alt="Plaguicida Abamex 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">FARMEX</p>
+                    <h3 class="name">Plaguicida Abamex® 1L</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 37.80</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+            <!-- POMO -->
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/Optimat.png" alt="Plaguicida Abamex 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">FARMEX</p>
+                    <h3 class="name">Plaguicida Abamex® 1L</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 37.80</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+            <!-- POMO -->
+            <article class="card" data-category="pomo">
+                <div class="card-header">
+                    <img src="productos/triadamin.png" alt="Plaguicida Abamex 1L">
+                </div>
+                <div class="card-body">
+                    <p class="brand">FARMEX</p>
+                    <h3 class="name">Plaguicida Abamex® 1L</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 42.00</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 37.80</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+             <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/Xaler pomo.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/Manzate sobre.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/A-LISINA-sobre.jpg" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/METSUL 50 WP sobre.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/rango sobre.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+            <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/CONTRINO sobre.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+             <!-- SOBRE -->
+            <article class="card" data-category="sobre">
+                <div class="card-header">
+                    <img src="productos/super all sobre.png" alt="Fungicida sistémico en Sobre">
+                </div>
+                <div class="card-body">
+                    <p class="brand">GENÉRICO</p>
+                    <h3 class="name">Fungicida sistémico en Sobre</h3>
+                    <p class="seller">Por LA BUENA TIERRA</p>
+
+                    <div class="price-box">
+                        <span class="old">S/ 18.00</span>
+                        <span class="discount">-6%</span>
+                    </div>
+                    <div class="price-now">
+                        <span>S/ 16.92</span><span class="unit"> un</span>
+                    </div>
+                </div>
+                <button class="cta" onclick="irPagos()">COMPRAR</button>
+            </article>
+
+
+
+
+
+            
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+
+    <script>
+        // FILTROS POR CATEGORÍA
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.card');
+
+        function aplicarFiltro(categoria) {
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                if (categoria === 'todos' || categoria === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                aplicarFiltro(btn.dataset.filter);
+            });
+        });
+
+        // BÚSQUEDA POR NOMBRE
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const term = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const name = card.querySelector('.name').textContent.toLowerCase();
+                if (name.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // IR A PAGOS
+        function irPagos() {
+            window.location.href = 'pagos.html';
+        }
+    </script>
+
+</body>
+</html>
+
+
+
